@@ -25,9 +25,10 @@ jobs:
           go-version: "1.21"
           cache: true
 
-      # Linter e Testes
+      # Dependências, Linter e Testes
       - name: "Linter & Testes Unitários"
         run: |
+          go mod tidy
           go vet ./...
           go test -v ./...
 
